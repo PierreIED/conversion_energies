@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".controller.GameActivity">
+
+    <TextView
+        android:id="@+id/titre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jeu des énergies !"
+        android:textSize="20sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+
+    <TextView
+        android:id="@+id/consigne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Choisissez un nombre d'énergie à jouer, puis faites glisser les énergies dans la case correspondante. Une fois les bonnes énergies en place, cliquez sur vérifier."
+        app:layout_constraintTop_toBottomOf="@id/titre" />
+
+    <TextView
+        android:id="@+id/nbEn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre d'énergies : "
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/consigne" />
+
+    <EditText
+        android:id="@+id/nbEnDem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/_3_10"
+        android:inputType="number"
+        app:layout_constraintLeft_toRightOf="@id/nbEn"
+        app:layout_constraintTop_toBottomOf="@id/consigne" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/plateau"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/nbEnDem"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/eEntrante"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:src="@drawable/fleche_energie"
+
+                />
+
+            <ImageView
+                android:id="@+id/conv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:src="@drawable/defaut_conv" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/eSortante1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/fleche_energie" />
+
+                <ImageView
+                    android:id="@+id/eSortante2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/fleche_energie" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginLeft="50dp">
+                <Button
+                    android:id="@+id/boutonAnnul"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Annuler"
+                    android:layout_marginBottom="10dp"
+                    android:clickable="false"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/listeEn" />
+
+                <Button
+                    android:id="@+id/boutonVerif"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="Vérifier"
+                    android:clickable="false"
+                    app:layout_constraintLeft_toRightOf="@id/boutonAnnul"
+                    app:layout_constraintTop_toBottomOf="@id/listeEn" />
+                <Button
+                    android:id="@+id/boutonRAZ"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tout recommencer"
+                    android:clickable="false"
+                    app:layout_constraintTop_toBottomOf="@id/boutonAnnul" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <HorizontalScrollView
+        android:id="@+id/listeEn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/plateau">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/e1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/e2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/e3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/e4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/e5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

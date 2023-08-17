@@ -1,0 +1,2 @@
+rootProject.name='ConvEnergies'
+include ':app'
