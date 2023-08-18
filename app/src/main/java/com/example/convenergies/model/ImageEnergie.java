@@ -1,13 +1,10 @@
 package com.example.convenergies.model;
 
-import android.content.ClipData;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 
 import com.example.convenergies.R;
-
-import java.util.List;
 
 public class ImageEnergie  {
 
@@ -16,38 +13,19 @@ public class ImageEnergie  {
     private int mTag;
     private boolean isSelected;
     private boolean isFound;
-
-
-
-
     private int mTypeEnergie;
 
 
     public ImageEnergie(ImageView imgView, int tag){
-       this.setImgView(imgView);
-       this.setmTag(tag);
-       this.isFound=false;
-       this.setTypeEnergie(-1);
-        //version tablette
-       //this.getImgView().setOnTouchListener(new MyTouchListener());
-
-        //version tel
+        this.setImgView(imgView);
+        this.setMTag(tag);
+        this.isFound=false;
+        this.setTypeEnergie(-1);
         this.isSelected= false;
 
             }
 
-
-    public final class selectEnergieListener implements View.OnTouchListener{
-
-        @Override
-        public boolean onTouch(View v, MotionEvent event) {
-
-            isSelected=true;
-            v.setBackgroundResource(R.drawable.border_selected);
-            v.setOnTouchListener(null);
-            return true;
-        }
-    }
+    // getters and setters :
     public ImageView getImgView() {
         return mImgView;
     }
@@ -56,11 +34,11 @@ public class ImageEnergie  {
         this.mImgView = mImgView;
     }
 
-    public int getmTag() {
+    public int getMTag() {
         return mTag;
     }
 
-    public void setmTag(int mTag) {
+    public void setMTag(int mTag) {
         this.mTag = mTag;
     }
 
@@ -71,6 +49,7 @@ public class ImageEnergie  {
     public void setFound(boolean found) {
         isFound = found;
     }
+
     public boolean isSelected() {
         return isSelected;
     }
@@ -86,13 +65,6 @@ public class ImageEnergie  {
     public void setTypeEnergie(int mTypeEnergie) {
         this.mTypeEnergie = mTypeEnergie;
     }
-
-
-
-
-
-
-
-    }
+}
 
 
